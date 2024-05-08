@@ -10,8 +10,8 @@ import java.util.List;
 @NoArgsConstructor @Setter @Getter
 public class Ban
 {
-    private String description;
-    private Date startDate;
-    private Date endDate;
-    private List<NegativeAction> reasons;
+    private String description;//описание (если необходимо)
+    private Date startDate;//время начала
+    private Date endDate;//время окончания
+    private List<NegativeAction> reasons;//список ссылок на негативные действия, за которые получен бан
 }
