@@ -16,6 +16,7 @@ public class User implements CanBeReported
     @Id
     private ObjectId id;
     private String username;
+    private String password;
     private String email;
     private Date birthday;
     private String name;

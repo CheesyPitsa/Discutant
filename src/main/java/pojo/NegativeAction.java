@@ -8,8 +8,8 @@ import java.util.Date;
 @NoArgsConstructor @Getter @Setter
 public class NegativeAction
 {
-    private String name;
-    private String description;
-    private Date date;
-    private String kind;
+    private String name;//название действия
+    private String description;//описание
+    private Date date;//дата совершения
+    private String kind;//вид действия(спам, мошенничество, оскорбления и т.д.)
 }

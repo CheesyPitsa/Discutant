@@ -20,6 +20,8 @@ public class Discussion implements CanBeReported
     private ObjectId id;
     private String name;
     @DBRef
+    private DiscussionSettings settings;
+    @DBRef
     private List<Category> categories;
     @DBRef
     private List<Topic> topics;
