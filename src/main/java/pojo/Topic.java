@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Getter
 @NoArgsConstructor
 @Document(collection = "topic")
-public class Topic
+public class Topic implements CanBeReported
 {
     @Id
     private ObjectId id;

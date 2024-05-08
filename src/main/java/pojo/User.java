@@ -11,7 +11,7 @@ import java.util.List;
 
 @Setter @Getter @NoArgsConstructor
 @Document(collection = "user")
-public class User
+public class User implements CanBeReported
 {
     @Id
     private ObjectId id;

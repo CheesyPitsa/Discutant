@@ -14,7 +14,7 @@ import java.util.Set;
 
 @NoArgsConstructor @Getter @Setter
 @Document (collection = "discussion")
-public class Discussion
+public class Discussion implements CanBeReported
 {
     @Id
     private ObjectId id;
