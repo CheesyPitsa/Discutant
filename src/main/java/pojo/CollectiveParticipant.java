@@ -1,5 +1,6 @@
 package pojo;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,19 +16,14 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document (collection = "collective")
-public class Collective
+@Document (collection = "collectiveParticipant")//участник коллектива
+public class CollectiveParticipant
 {
     private @MongoId ObjectId id;
-    private String name;
-    private String type; //учеба, работа, друзья и т.п.
-    private String description;
+    @NotBlank
     @DBRef
-    private User creator;
-    @DBRef
-    private Set<CollectiveParticipant> participants;
+    private User user;
+    private boolean request;//false только тогда, когда пользователь подал заявку на участие в коллективе и ее еще не приняли
     @DBRef
     private Set<CollectiveRole> roles;
-    @DBRef
-    private Set<Chat> chats;
 }

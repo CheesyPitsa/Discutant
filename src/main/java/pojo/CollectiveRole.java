@@ -1,5 +1,6 @@
 package pojo;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,25 +10,31 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
+import java.awt.*;
+import java.util.HashMap;
 import java.util.Set;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document (collection = "collective")
-public class Collective
+@Document(collection = "collectiveRole")//коллективная роль
+public class CollectiveRole
 {
     private @MongoId ObjectId id;
+    @NotBlank
     private String name;
-    private String type; //учеба, работа, друзья и т.п.
     private String description;
+    private Color color;
     @DBRef
-    private User creator;
-    @DBRef
-    private Set<CollectiveParticipant> participants;
-    @DBRef
-    private Set<CollectiveRole> roles;
-    @DBRef
-    private Set<Chat> chats;
+    private Set<Rights> rights;
+    @Getter
+    @Setter
+    @NoArgsConstructor
+    @AllArgsConstructor
+    private static class Rights
+    {
+        @DBRef
+        private HashMap<CollectivePossibilities, String> rights;
+    }
 }
