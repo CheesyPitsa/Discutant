@@ -36,4 +36,9 @@ public class UserService
     {
         userRepo.deleteById(id);
     }
+
+    public User findByNickname(String nick)
+    {
+        return userRepo.findUserByUsername(nick);
+    }
 }

@@ -4,9 +4,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.Date;
 import java.util.List;
@@ -16,8 +16,7 @@ import java.util.Set;
 @Document (collection = "discussion")
 public class Discussion implements CanBeReported
 {
-    @Id
-    private ObjectId id;
+    private @MongoId ObjectId id;
     private String name; //название дискуссии
     @DBRef
     private DiscussionSettings settings; //параметры дискуссии

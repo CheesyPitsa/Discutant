@@ -7,6 +7,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 @NoArgsConstructor
 @Getter
@@ -14,8 +15,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "discussionSettings")
 public class DiscussionSettings
 {
-    @Id
-    private ObjectId id;
+    private @MongoId ObjectId id;
     private String type;//закрытая, открытая, приватная
     private String kind;//регламентированная, нерегламентированная, бесконечная (без записи видео и транскрипции)
     @DBRef

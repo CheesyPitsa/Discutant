@@ -3,8 +3,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.bson.types.ObjectId;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.util.Date;
 import java.util.List;
@@ -13,8 +13,7 @@ import java.util.List;
 @Document(collection = "user")
 public class User implements CanBeReported
 {
-    @Id
-    private ObjectId id;
+    private @MongoId ObjectId id;
     private String username;
     private String password;
     private String email;
