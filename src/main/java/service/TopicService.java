@@ -27,9 +27,9 @@ public class TopicService
         return topicRepo.findById(id).orElse(null);
     }
 
-    public void saveTopic(Topic user)
+    public void saveTopic(Topic topic)
     {
-        topicRepo.save(user);
+        topicRepo.save(topic);
     }
 
     public void deleteTopic(ObjectId id)

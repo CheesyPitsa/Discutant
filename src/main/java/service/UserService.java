@@ -7,7 +7,6 @@ import pojo.User;
 import repo.UserRepo;
 
 import java.util.List;
-
 @Service
 public class UserService
 {
