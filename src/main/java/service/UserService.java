@@ -40,4 +40,9 @@ public class UserService
     {
         return userRepo.findUserByUsername(nick);
     }
+
+    public User findProfileByNickname(String nick)
+    {
+        return userRepo.findUserProfileByUsername(nick);
+    }
 }
