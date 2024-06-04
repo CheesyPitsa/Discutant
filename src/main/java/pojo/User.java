@@ -18,7 +18,7 @@ import java.util.Set;
 
 @Setter @Getter @NoArgsConstructor @AllArgsConstructor
 @Document(collection = "user")
-public class User implements CanBeReported
+public class User implements CanBeReported, HaveChat
 {
     public User(String username, String password, String email)
     {

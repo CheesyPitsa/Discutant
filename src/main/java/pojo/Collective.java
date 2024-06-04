@@ -16,7 +16,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document (collection = "collective")
-public class Collective
+public class Collective implements HaveChat
 {
     private @MongoId ObjectId id;
     private String name;
