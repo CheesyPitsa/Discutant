@@ -50,4 +50,6 @@ public class User implements CanBeReported, HaveChat
     private String video;
     private List<NegativeAction> negativeActions;
     private List<Ban> bans;
+    @DBRef
+    private List<User> friends;
 }

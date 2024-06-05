@@ -5,6 +5,8 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import pojo.User;
 
+import java.util.Set;
+
 public interface UserRepo extends MongoRepository<User, ObjectId>
 {
     @Query("{username:'?0'}")
@@ -16,4 +18,5 @@ public interface UserRepo extends MongoRepository<User, ObjectId>
     Boolean existsByUsername(String username);
 
     Boolean existsByEmail(String email);
+
 }

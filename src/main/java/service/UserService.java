@@ -6,7 +6,10 @@ import org.springframework.stereotype.Service;
 import pojo.User;
 import repo.UserRepo;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+
 @Service
 public class UserService
 {
@@ -44,5 +47,11 @@ public class UserService
     public User findProfileByNickname(String nick)
     {
         return userRepo.findUserProfileByUsername(nick);
+    }
+
+    public List<User> findFriends(String username)
+    {
+        User user = findProfileByNickname(username);
+        return user.getFriends();
     }
 }
