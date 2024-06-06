@@ -9,7 +9,6 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
-import java.util.ArrayList;
 import java.util.Set;
 
 @Getter
@@ -19,7 +18,7 @@ import java.util.Set;
 @Document (collection = "collective")
 public class Collective implements HaveChat
 {
-    private @MongoId ObjectId id;
+    private @MongoId ObjectId _id;
     private String name;
     private String type; //учеба, работа, друзья и т.п.
     private String description;

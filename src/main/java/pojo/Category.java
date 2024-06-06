@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 @Document(collection = "category")
 public class Category implements CanBeReported
 {
-    private @MongoId ObjectId id;
+    private @MongoId ObjectId _id;
     private String name;
     @DBRef
     private User creator;

@@ -19,7 +19,7 @@ import java.util.Set;
 @Document (collection = "collectiveParticipant")//участник коллектива
 public class CollectiveParticipant
 {
-    private @MongoId ObjectId id;
+    private @MongoId ObjectId _id;
     @NotBlank
     @DBRef
     private User user;

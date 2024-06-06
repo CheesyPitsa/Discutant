@@ -17,7 +17,7 @@ import java.util.List;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class Chat
 {
-    private @MongoId ObjectId id;
+    private @MongoId ObjectId _id;
     private List<HaveChat> location; //К чему относится чат
     @DBRef
     private ArrayList<Message> messages; //Сообщения чата

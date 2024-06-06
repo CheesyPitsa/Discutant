@@ -27,7 +27,7 @@ public class User implements CanBeReported, HaveChat
         this.email = email;
     }
 
-    private @MongoId ObjectId id;
+    private @MongoId ObjectId _id;
     @NotBlank
     @Size(min = 2, max = 20)
     private String username;
@@ -58,4 +58,10 @@ public class User implements CanBeReported, HaveChat
     private List<Category> categories;//подписки на категории
     @DBRef
     private List<Topic> topics;//подписки на темы
+
+    @Override
+    public ObjectId get_id()
+    {
+        return this._id;
+    }
 }

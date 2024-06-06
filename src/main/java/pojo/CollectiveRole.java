@@ -21,7 +21,7 @@ import java.util.Set;
 @Document(collection = "collectiveRole")//коллективная роль
 public class CollectiveRole
 {
-    private @MongoId ObjectId id;
+    private @MongoId ObjectId _id;
     @NotBlank
     private String name;
     private String description;

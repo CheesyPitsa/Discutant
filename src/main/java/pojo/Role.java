@@ -12,6 +12,6 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 @Document(collection = "role")
 public class Role
 {
-    private @MongoId ObjectId id;
+    private @MongoId ObjectId _id;
     private ERole name;
 }

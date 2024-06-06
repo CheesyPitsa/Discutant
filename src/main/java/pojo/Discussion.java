@@ -16,7 +16,7 @@ import java.util.Set;
 @Document (collection = "discussion")
 public class Discussion implements CanBeReported
 {
-    private @MongoId ObjectId id;
+    private @MongoId ObjectId _id;
     private String name; //название дискуссии
     @DBRef
     private DiscussionSettings settings; //параметры дискуссии
@@ -37,6 +37,12 @@ public class Discussion implements CanBeReported
     private String steno; //содержание дискуссии в текстовом формате
     private String video; //ссылка на запись дискуссии
     private Set<Reaction> reactions; //список реакций пользователей на трансляцию
+
+    @Override
+    public ObjectId get_id()
+    {
+        return this._id;
+    }
 
     @Getter
     @Setter

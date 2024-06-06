@@ -15,7 +15,7 @@ import java.util.List;
 @Document(collection = "report")
 public class Report
 {
-    private @MongoId ObjectId id;
+    private @MongoId ObjectId _id;
     private User creator;//автор жалобы
     private CanBeReported reportObject;//на что жалоба
     private String description;//описание
