@@ -11,7 +11,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import java.awt.*;
-import java.util.HashMap;
 import java.util.Set;
 
 @Getter
@@ -35,6 +34,7 @@ public class CollectiveRole
     private static class Rights
     {
         @DBRef
-        private HashMap<CollectivePossibilities, String> rights;
+        private CollectivePossibilities possibility;
+        private Boolean isPossible;
     }
 }

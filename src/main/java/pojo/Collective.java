@@ -28,6 +28,4 @@ public class Collective implements HaveChat
     private Set<CollectiveParticipant> participants;
     @DBRef
     private Set<CollectiveRole> roles;
-    @DBRef
-    private Set<Chat> chats;
 }

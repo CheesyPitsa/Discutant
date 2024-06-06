@@ -19,7 +19,7 @@ public class Regulations//регламент дискуссии
     {
         private String name;//название раунда, если не указано возвращать номер раунда
         private int index;//номер раунда
-        private Participants participant;//ссылка на участника
+        private User user;//ссылка на участника
         private int time;//время на выступление в секундах
     }
 }

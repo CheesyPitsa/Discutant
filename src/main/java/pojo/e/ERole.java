@@ -1,4 +1,4 @@
-package pojo;
+package pojo.e;
 
 public enum ERole
 {

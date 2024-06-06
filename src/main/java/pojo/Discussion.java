@@ -27,7 +27,7 @@ public class Discussion implements CanBeReported
     @DBRef
     private User creator; //создатель дискуссии
     @DBRef
-    private List<Participants> participants; //участники дискуссии
+    private List<User> users; //участники дискуссии
     private Date date; //дата и время проведения дискуссии
     @DBRef
     private Chat chat; //соответствующий дискуссии чат
