@@ -52,4 +52,10 @@ public class User implements CanBeReported, HaveChat
     private List<Ban> bans;
     @DBRef
     private List<User> friends;
+    @DBRef
+    private List<User> follow;//подписки на пользователей
+    @DBRef
+    private List<Category> categories;//подписки на категории
+    @DBRef
+    private List<Topic> topics;//подписки на темы
 }
