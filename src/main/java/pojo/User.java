@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
@@ -29,6 +30,7 @@ public class User implements CanBeReported, HaveChat
 
     private @MongoId ObjectId _id;
     @NotBlank
+    @Indexed(unique = true)
     @Size(min = 2, max = 20)
     private String username;
     @NotBlank
