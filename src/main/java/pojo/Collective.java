@@ -8,6 +8,7 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
+import pojo.e.ECollectiveType;
 
 import java.util.Set;
 
@@ -20,7 +21,7 @@ public class Collective implements HaveChat
 {
     private @MongoId ObjectId _id;
     private String name;
-    private String type; //учеба, работа, друзья и т.п.
+    private ECollectiveType type; //учеба, работа, друзья и т.п.
     private String description;
     @DBRef
     private User creator;

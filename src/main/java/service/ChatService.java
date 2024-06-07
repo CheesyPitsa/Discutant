@@ -4,6 +4,7 @@ import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pojo.Chat;
+import pojo.HaveChat;
 import repo.ChatRepo;
 
 import java.util.List;
@@ -36,5 +37,10 @@ public class ChatService
     public void deleteChat(ObjectId id)
     {
         repo.deleteById(id);
+    }
+
+    public List<Chat> getChatsByLocation(List<HaveChat> location)
+    {
+        return repo.findByLocation(location);
     }
 }

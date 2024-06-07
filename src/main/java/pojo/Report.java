@@ -6,6 +6,7 @@ import lombok.Setter;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
+import pojo.e.EReportType;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
 public class Report
 {
     private @MongoId ObjectId _id;
+    private EReportType type;
     private User creator;//автор жалобы
     private CanBeReported reportObject;//на что жалоба
     private String description;//описание
