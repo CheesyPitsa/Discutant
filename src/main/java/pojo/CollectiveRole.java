@@ -31,7 +31,7 @@ public class CollectiveRole
     @Setter
     @NoArgsConstructor
     @AllArgsConstructor
-    private static class Rights
+    public static class Rights
     {
         @DBRef
         private CollectivePossibilities possibility;

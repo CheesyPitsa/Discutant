@@ -3,7 +3,9 @@ package service;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pojo.CanBeReported;
 import pojo.Report;
+import pojo.User;
 import repo.ReportRepo;
 
 import java.util.List;
@@ -35,5 +37,15 @@ public class ReportService
     public void deleteReport(ObjectId id)
     {
         reportRepo.deleteById(id);
+    }
+
+    public List<Report> findReportByAuthor(User author)
+    {
+        return reportRepo.findByCreator(author);
+    }
+
+    public List<Report> findReportByReported(CanBeReported reported)
+    {
+        return reportRepo.findByReportObject(reported);
     }
 }

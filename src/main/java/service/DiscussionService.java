@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.query.CriteriaDefinition;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import pojo.Discussion;
+import pojo.User;
 import repo.DiscussionRepo;
 
 import java.util.Calendar;
@@ -55,6 +56,11 @@ public class DiscussionService
         CriteriaDefinition request = CreateRequestWithFilter(filter);
         Query query = new Query(request);
         return repo.findBy(query);
+    }
+
+    public List<Discussion> findByDiscutant(User user)
+    {
+        return repo.findDiscussionsByCreatorOrUsersContains(user, user);
     }
 
     private CriteriaDefinition CreateRequestWithFilter(String filters)

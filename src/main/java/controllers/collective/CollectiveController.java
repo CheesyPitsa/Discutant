@@ -5,10 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pojo.Chat;
-import pojo.Collective;
-import pojo.CollectiveParticipant;
-import pojo.HaveChat;
+import pojo.*;
 import service.ChatService;
 import service.CollectiveService;
 
@@ -45,5 +42,29 @@ public class CollectiveController
         Collective collective = collectiveService.getCollectiveById(new ObjectId(collective_id));
         List<HaveChat> location = Collections.singletonList(collective);
         return chatService.getChatsByLocation(location);
+    }
+
+    @PostMapping("/collectives/{collective_id}/roles")
+    public Set<CollectiveRole> postCollectiveRoles(@PathVariable String collective_id)
+    {
+        Collective collective = collectiveService.getCollectiveById(new ObjectId(collective_id));
+        return collective.getRoles();
+    }
+
+    @PostMapping("/collectives/{collective_id}/possibilities")
+    public List<CollectivePossibilities> postCollectivePossibilities(@PathVariable String collective_id)
+    {
+        Collective collective = collectiveService.getCollectiveById(new ObjectId(collective_id));
+        Set<CollectiveRole> roles = collective.getRoles();
+        List<CollectivePossibilities> possibilities = new ArrayList<>();
+        for (CollectiveRole role : roles)
+        {
+            Set<CollectiveRole.Rights> rights = role.getRights();
+            for (CollectiveRole.Rights right : rights)
+            {
+                possibilities.add(right.getPossibility());
+            }
+        }
+        return possibilities;
     }
 }

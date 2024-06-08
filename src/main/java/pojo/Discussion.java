@@ -14,7 +14,7 @@ import java.util.Set;
 
 @NoArgsConstructor @Getter @Setter
 @Document (collection = "discussion")
-public class Discussion implements CanBeReported
+public class Discussion implements CanBeReported, HaveChat
 {
     private @MongoId ObjectId _id;
     private String name; //название дискуссии

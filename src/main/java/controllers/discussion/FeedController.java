@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pojo.Discussion;
-import pojo.User;
 import service.DiscussionService;
 import service.UserService;
 
@@ -28,6 +27,12 @@ public class FeedController //Лента дискуссий
     public List<Discussion> postPopular()
     {
         return discussionService.findPopular();
+    }
+
+    @PostMapping("/discussions/{user_nickname}")
+    public List<Discussion> postUserDiscussions(@PathVariable String user_nickname)
+    {
+        return discussionService.findByDiscutant(userService.findProfileByNickname(user_nickname));
     }
 
     @PostMapping("/discussions/feed")
