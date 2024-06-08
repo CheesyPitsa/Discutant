@@ -35,6 +35,12 @@ public class FeedController //Лента дискуссий
         return discussionService.findByDiscutant(userService.findProfileByNickname(user_nickname));
     }
 
+    @PostMapping("/discussions/{user_nickname}")
+    public List<Discussion> postUserSubscribes(@PathVariable String user_nickname)
+    {
+        return discussionService.findBySubscribes(userService.findProfileByNickname(user_nickname));
+    }
+
     @PostMapping("/discussions/feed")
     public List<Discussion> postDiscussions(String filters)
     {

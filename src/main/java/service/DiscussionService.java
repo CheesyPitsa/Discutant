@@ -12,6 +12,8 @@ import pojo.User;
 import repo.DiscussionRepo;
 
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -61,6 +63,11 @@ public class DiscussionService
     public List<Discussion> findByDiscutant(User user)
     {
         return repo.findDiscussionsByCreatorOrUsersContains(user, user);
+    }
+
+    public List<Discussion> findBySubscribes(User user)
+    {
+        return repo.findByCategoriesInOrTopicsInOrUsersIn(user.getCategories(), user.getTopics(), user.getFollow());
     }
 
     private CriteriaDefinition CreateRequestWithFilter(String filters)
